@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Opdracht_3.2</title>
+</head>
+<body>
+    <h1 class="title">TUI</h1>
+    <h2 class="subtitle">Reserveer vandaag nog een vlucht voor slechts €10 met <br> dank aan De koning van alle beesten en vissen in de zee Jandro Thielman.</h2>
+    <br>
+
+    <button onclick="myFunction()" id="TP">Ticket Kopen</button>
+
+<div id="hide">
+
+<form class="f1" method="post" action="mailto:giandrotl24@gmail.com">
+
+    <div>
+            <label for="FirstName">First Name:</label>
+            <input type="text" name="FirstName" id="FirstName" placeholder="First Name" required onkeydown="isInputLetter(event)" class="i1">
+    </div>
+
+    <div>
+            <label for="LastName">Last Name:</label>
+            <input type="text" name="LastName" id="LastName" placeholder="Last Name" required onkeydown="isInputLetter(event)" class="i1">
+    </div>
+
+    <div>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" required  value="male" checked>
+            <br>
+            <label for="female" id="i2">Female</label>
+            <input type="radio" name="gender" id="female" required>
+    </div>
+
+    <div>
+            <label for="Country/Region">Land/regio:</label>
+            <select name="Country/Region" id="Country/Region">
+                <option value="Choose">Choose</option>
+                <option value="United States" label="United States"></option>
+                <option value="Nederlands" label="Nederlands"></option>
+                <option value="United Kingdom" label="United Kingdom"></option>
+                <option value="Germany" label="Germany"></option>
+            </select>
+    </div>
+
+    <div>
+            <label for="StreetName">Straatnaam:</label>
+            <input type="text" name="StreetName" id="StreetName" placeholder="Street Name" required onkeydown="isInputLetter(event)" class="i1">
+    </div>
+
+    <div>
+            <label for="HouseNumber">Huisnummer:</label>
+            <input type="text" name="HouseNumber" id="HouseNumber" placeholder="House Number" required  class="i1">
+    </div>
+
+    <div>
+            <label for="PostalCode">Postcode:</label>
+            <input type="text" name="PostalCode" id="PostalCode" placeholder="Postal Code" class="i1">
+    </div>
+
+    <div>
+            <label for="City">Stad:</label>
+            <input type="text" name="City" id="City" placeholder="City" required onkeydown="isInputLetter(event)" class="i1">
+    </div>
+
+    <div>
+            <label for="State/Province">Staat / Provincie:</label>
+            <select name="State/Province" id="State/Province">
+                <option value="Choose">Choose</option>
+                <option value="Drenthe" label="Drenthe"></option>
+                <option value="Flevoland" label="Flevoland"></option>
+                <option value="Friesland" label="Friesland"></option>
+                <option value="Gelderland" label="Gelderland"></option>
+                <option value="Groningen" label="Groningen"></option>
+                <option value="Limburg" label="Limburg"></option>
+                <option value="Noord-Brabant" label="Noord-Brabant"></option>
+                <option value="Noord-Holland" label="Noord-Holland"></option>
+                <option value="Overijssel" label="Overijssel"></option>
+                <option value="Utrecht" label="Utrecht"></option>
+                <option value="Zeeland" label="Zeeland"></option>
+                <option value="Zuid-Holland" label="Zuid-Holland"></option>
+            </select>
+    </div>
+
+    <div>
+            <label for="BSN">BSN Number:</label>
+            <input type="text" name="BSN" id="BSN" placeholder="BSN" required onkeydown="isInputNumber(event)" class="i1" minlength="8" maxlength="9">
+    </div>
+
+    <div>
+            <label for="Vakantieland">Vakantieland:</label>
+            <select name="Vakantieland" id="Vakantieland">
+                <option value="Choose">Choose</option>
+                <option value="Macedonië" label="Macedonië"></option>
+                <option value="Portugal" label="Portugal"></option>
+                <option value="Turkije" label="Turkije"></option>
+                <option value="Gambia" label="Gambia"></option>
+                <option value="Griekenland" label="Griekenland"></option>
+                <option value="Bulgarije" label="Bulgarije"></option>
+                <option value="Egypte" label="Egypte"></option>
+                <option value="Indonesië" label="Indonesië"></option>
+                <option value="Zanzibar" label="Zanzibar"></option>
+                <option value="Spanje" label="Spanje"></option>
+                <option value="Noorwegen" label="Noorwegen"></option>
+                <option value="Schotland" label="Schotland"></option>
+            </select>
+    </div>
+
+    <div>
+            <label for="date">Datum van vertrek:</label>
+            <input type="Date" name="Date" id="Date" min="2023-09-15" class="i1">
+    </div>
+
+    <div>
+            <label for="date">Datum van terugkomst:</label>
+            <input type="Date" name="Date" id="Date" class="i1">
+    </div>
+
+    <div>
+            <label for="Aantalreisgenoten">Aantal reisgenoten:</label>
+            <input type="number" name="Aantalreisgenoten" id="Aantalreisgenoten" placeholder="Aantalreisgenoten" required onkeydown="isInputNumber(event)" class="i1" min="1" max="4">
+    </div>
+
+    <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Someone@gmail.com" required class="i2">
+    </div>
+
+    <div>
+           <label for="pwd">Password:</label>
+           <input type="password" id="pwd" name="pwd" minlength="5" class="i1" placeholder="Password">
+    </div>
+
+    <button type="submit" class="f17">Boek Nu</button>
+
+</form>
+
+</div>
+
+    <script>
+
+        function isInputLetter(evt) {
+            var ch = String.fromCharCode(evt.which);
+
+            if(!(/[a-zA-Z]/.test(ch) || ch === " " || evt.keyCode === 8)){
+                evt.preventDefault();
+            }
+        }
+
+        function isInputNumber(evt) {
+            var ch = String.fromCharCode(evt.which);
+
+            if(!(/[0-9]/.test(ch) || ch === "" || evt.keyCode === 8)){
+                evt.preventDefault();
+            }
+        }
+
+        function myFunction() {
+            var x = document.getElementById("hide");
+            if (x.style.display === "none") {
+                x.style.display = "none";
+            }
+            else {
+                x.style.display = "contents";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
